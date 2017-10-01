@@ -9,24 +9,26 @@ import org.springframework.web.context.request.NativeWebRequest
 import org.springframework.web.context.request.ServletRequestAttributes
 import org.springframework.web.method.support.HandlerMethodArgumentResolver
 import org.springframework.web.method.support.ModelAndViewContainer
+import org.springframework.web.reactive.config.EnableWebFlux
+import org.springframework.web.reactive.config.WebFluxConfigurer
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer
 import org.springframework.web.servlet.config.annotation.EnableWebMvc
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import javax.servlet.http.HttpServletRequest
 
-@EnableWebMvc
+@EnableWebFlux
 @Configuration
 @ComponentScan(basePackages = arrayOf("io.chat.*"))
-open class WebConfig : WebMvcConfigurerAdapter() {
+open class WebConfig : WebFluxConfigurer {
 
-    override fun configureContentNegotiation(configurer: ContentNegotiationConfigurer) {
+    fun configureContentNegotiation(configurer: ContentNegotiationConfigurer) {
         configurer.ignoreAcceptHeader(true)
                 .favorPathExtension(false)
                 .favorParameter(false)
                 .defaultContentType(MediaType.APPLICATION_JSON)
     }
 
-    override fun addArgumentResolvers(argumentResolvers: MutableList<HandlerMethodArgumentResolver>) {
+    fun addArgumentResolvers(argumentResolvers: MutableList<HandlerMethodArgumentResolver>) {
         argumentResolvers.add(object : HandlerMethodArgumentResolver {
             override fun supportsParameter(parameter: MethodParameter): Boolean =
                     parameter.parameterType.isAssignableFrom(ServletRequestAttributes::class.java)
