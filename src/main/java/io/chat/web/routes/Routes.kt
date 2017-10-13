@@ -1,14 +1,10 @@
-package io.chat.routes
+package io.chat.web.routes
 
-import io.chat.handler.PersonHandler
+import io.chat.domain.users.handler.PersonHandler
 import org.springframework.context.MessageSource
 import org.springframework.core.io.ClassPathResource
 import org.springframework.http.MediaType.*
-import org.springframework.web.reactive.function.server.RenderingResponse
 import org.springframework.web.reactive.function.server.router
-import org.springframework.web.reactive.function.server.ServerResponse.*
-import reactor.core.publisher.toMono
-import java.util.*
 
 /**
  * Created by coupang on 2017. 10. 1..

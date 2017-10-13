@@ -3,6 +3,7 @@ package io.chat.config
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import org.springframework.core.MethodParameter
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.http.MediaType
 import org.springframework.web.bind.support.WebDataBinderFactory
 import org.springframework.web.context.request.NativeWebRequest
@@ -17,6 +18,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import javax.servlet.http.HttpServletRequest
 
 @EnableWebFlux
+@EnableJpaRepositories
 @Configuration
 @ComponentScan(basePackages = arrayOf("io.chat.*"))
 open class WebConfig : WebFluxConfigurer {
