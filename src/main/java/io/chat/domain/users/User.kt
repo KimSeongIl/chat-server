@@ -2,6 +2,7 @@ package io.chat.domain.users
 
 import javax.persistence.*
 
+
 @Entity
 class User {
     @Id
@@ -15,6 +16,4 @@ class User {
     var userId : String = ""
     @Column(name = "user_name")
     var userName : String = ""
-
-
 }

@@ -1,0 +1,16 @@
+context:
+  initializer:
+    classes: io.chat.config.BeansInitializer
+
+spring:
+  jpa:
+    show-sql: true
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://db.cs.coupangdev.com:3306/crms
+    username: cinn
+    password:
+
+server:
+  port: 10001
+
