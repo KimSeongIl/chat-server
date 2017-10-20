@@ -1,6 +1,6 @@
 package io.chat.domain.users.dto
 
-//import io.chat.domain.users.User
+//import io.chat.domain.users.Member
 
 /**
  * Created by coupang on 2017. 10. 1..
@@ -14,6 +14,6 @@ package io.chat.domain.users.dto
 //        var userName : String = "") {
 //
 //    companion object {
-//        fun of(source : User) = UserDto(source.id, source.auth, source.passwd, source.salt, source.userId, source.userName)
+//        fun of(source : Member) = UserDto(source.id, source.auth, source.passwd, source.salt, source.userId, source.userName)
 //    }
 //}
