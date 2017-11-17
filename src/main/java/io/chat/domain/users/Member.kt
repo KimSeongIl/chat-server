@@ -4,8 +4,8 @@ import javax.persistence.*
 
 
 @Entity
-@Table(name = "member")
-class Member (id : Long?, password: String, email: String) {
+@Table(name = "user")
+class Member {
 
 
 
@@ -14,9 +14,9 @@ class Member (id : Long?, password: String, email: String) {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id : Long? = null
 
-    @Column(name = "password")
+    @Column(name = "passwd")
     var password : String = ""
 
-    @Column(name = "email")
+    @Column(name = "user_name")
     var email : String = ""
 }

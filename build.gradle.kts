@@ -46,6 +46,8 @@ dependencies {
     compile("org.jetbrains.kotlin:kotlin-reflect")
     compile("org.springframework.boot:spring-boot-starter-webflux")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.springframework.boot:spring-boot-starter-integration")
+    compile("org.springframework:spring-messaging:5.0.0.RELEASE")
     compile("mysql:mysql-connector-java:5.1.6")
     compile("com.samskivert:jmustache")
 
